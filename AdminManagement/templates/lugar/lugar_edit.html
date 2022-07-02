@@ -24,6 +24,13 @@
             .field1 {
                 width: 10%;
             }
+            .field2 {
+                outline: none;
+                border: 3px double black;
+                width: 15%;
+                color: #757575;
+                background-color: white;
+            }
         </style>
     </head>
     
@@ -31,26 +38,16 @@
 
         <br>
 
-        <h2 class="text-primary">Criar parque</h2>
+        <h2 class="text-primary">Editar lugar</h2>
         
         <br>
         
         <form action='.' method='POST' enctype="multipart/form-data">{% csrf_token %}
-            <p>Nome: {{ form.nome }}</p>
+            <p>Número do lugar: {{ form.numero_do_lugar }}</p>
             <br>
-            <p>Capacidade: {{ form.capacidade }}</p>
+            <p>Estado: {{ form.estado }}</p>
             <br>
-            <p>Número de zonas: {{ form.zonas }}</p>
-            <br>
-            <p>Morada: {{ form.morada }}</p>
-            <br>
-            <p>Cidade: {{ form.cidade }}</p>
-            <br>
-            <p>Código postal: {{ form.codigo_postal }}</p>
-            <br>
-            <p>Foto: {{ form.foto }}</p>
-            <br>
-            <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Criar' />
+            <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Editar' />
         </form>
         
         <br>

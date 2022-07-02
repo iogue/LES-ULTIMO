@@ -4,28 +4,32 @@ from .models import Parque, Zona, Lugar
 class ParqueModelFormCreate(forms.ModelForm):
     nome = forms.CharField(
         max_length=60,
-        widget=forms.TextInput(attrs={'placeholder':'Enter the name of the park','rows':1,'cols':20}),
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     capacidade = forms.IntegerField(
         min_value=10,
         initial=10,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     zonas = forms.IntegerField(
         min_value=1,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     morada = forms.CharField(
         max_length=120,
-        widget=forms.TextInput(attrs={'placeholder':'Enter the address of the park','rows':1,'cols':120}),
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     cidade = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     codigo_postal = forms.IntegerField(
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     foto = forms.ImageField(
@@ -195,32 +199,37 @@ class ParqueModelFormCreate(forms.ModelForm):
 class ParqueModelForm(forms.ModelForm):
     nome = forms.CharField(
         max_length=60,
-        widget=forms.TextInput(attrs={'placeholder':'Enter the name of the park','rows':1,'cols':20}),
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     capacidade = forms.IntegerField(
         min_value=10,
         initial=10,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     zonas = forms.IntegerField(
         min_value=1,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     estado = forms.ChoiceField(
         choices=Parque.make_options(),
+        widget=forms.Select(attrs={'class':'field2'}),
         required=True
         )
     morada = forms.CharField(
         max_length=120,
-        widget=forms.TextInput(attrs={'placeholder':'Enter the address of the park','rows':1,'cols':120}),
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     cidade = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'field'}),
         required=True
         )
     codigo_postal = forms.IntegerField(
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         required=True
         )
     foto = forms.ImageField(
@@ -394,15 +403,18 @@ class ZonaModelForm(forms.ModelForm):
     numero_da_zona = forms.IntegerField(
         required=True,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         min_value=1,
         )
     lugares = forms.IntegerField(
         required=True,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         min_value=1,
         )
     tipo_de_zona = forms.ChoiceField(
         choices=Zona.make_options(),
+        widget=forms.Select(attrs={'class':'field2'}),
         required=True
         )
 
@@ -421,10 +433,12 @@ class LugarModelForm(forms.ModelForm):
     numero_do_lugar = forms.IntegerField(
         required=True,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         min_value=1,
         )
     estado = forms.ChoiceField(
         choices=Lugar.make_options(),
+        widget=forms.Select(attrs={'class':'field2'}),
         required=True
         )
 
@@ -439,6 +453,7 @@ class LugarModelFormCreate(forms.ModelForm):
     numero_do_lugar = forms.IntegerField(
         required=True,
         initial=1,
+        widget=forms.NumberInput(attrs={'class': 'field1'}),
         min_value=1,
         )
 

@@ -24,6 +24,13 @@
             .field1 {
                 width: 10%;
             }
+            .field2 {
+                outline: none;
+                border: 3px double black;
+                width: 15%;
+                color: #757575;
+                background-color: white;
+            }
         </style>
     </head>
     
@@ -31,7 +38,7 @@
 
         <br>
 
-        <h2 class="text-primary">Criar parque</h2>
+        <h2 class="text-primary">Editar parque</h2>
         
         <br>
         
@@ -42,6 +49,8 @@
             <br>
             <p>Número de zonas: {{ form.zonas }}</p>
             <br>
+            <p>Estado: {{ form.estado }}</p>
+            <br>
             <p>Morada: {{ form.morada }}</p>
             <br>
             <p>Cidade: {{ form.cidade }}</p>
@@ -50,7 +59,7 @@
             <br>
             <p>Foto: {{ form.foto }}</p>
             <br>
-            <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Criar' />
+            <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Editar' />
         </form>
         
         <br>

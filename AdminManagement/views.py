@@ -70,7 +70,7 @@ class ParqueDetailView(DetailView):
 
 
 class ParqueUpdateView(UpdateView):
-    template_name = 'parque/parque_create.html'
+    template_name = 'parque/parque_edit.html'
     form_class = ParqueModelForm
     queryset = Parque.objects.all()
 
@@ -166,7 +166,7 @@ class ZonaCreateView(CreateView):
 
 
 class ZonaUpdateView(UpdateView):
-    template_name = 'zona/zona_create.html'
+    template_name = 'zona/zona_edit.html'
     form_class = ZonaModelForm
     model = Zona
 
@@ -266,7 +266,7 @@ class LugarCreateView(CreateView):
 
 
 class LugarUpdateView(UpdateView):
-    template_name = 'lugar/lugar_create.html'
+    template_name = 'lugar/lugar_edit.html'
     form_class = LugarModelForm
     model = Lugar
 
