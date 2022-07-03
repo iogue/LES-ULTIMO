@@ -31,6 +31,10 @@
                 color: #757575;
                 background-color: white;
             }
+            ul {
+                color: red;
+                margin-left: 3.75%;
+            }
         </style>
     </head>
     
@@ -43,10 +47,13 @@
         <br>
         
         <form action='.' method='POST' enctype="multipart/form-data">{% csrf_token %}
+            <p>{{ form.numero_da_zona.errors }}</p>
             <p>Número da zona: {{ form.numero_da_zona }}</p>
             <br>
+            <p>{{ form.lugares.errors }}</p>
             <p>Número de lugares: {{ form.lugares }}</p>
             <br>
+            <p>{{ form.tipo_de_zona.errors }}</p>
             <p>Tipo da zona: {{ form.tipo_de_zona }}</p>
             <br>
             <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Criar' />

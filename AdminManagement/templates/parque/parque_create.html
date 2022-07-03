@@ -24,6 +24,10 @@
             .field1 {
                 width: 10%;
             }
+            ul {
+                color: red;
+                margin-left: 3.75%;
+            }
         </style>
     </head>
     
@@ -36,16 +40,22 @@
         <br>
         
         <form action='.' method='POST' enctype="multipart/form-data">{% csrf_token %}
+            <p>{{ form.nome.errors }}</p>
             <p>Nome: {{ form.nome }}</p>
             <br>
+            <p>{{ form.capacidade.errors }}</p>
             <p>Capacidade: {{ form.capacidade }}</p>
             <br>
+            <p>{{ form.zonas.errors }}</p>
             <p>Número de zonas: {{ form.zonas }}</p>
             <br>
+            <p>{{ form.morada.errors }}</p>
             <p>Morada: {{ form.morada }}</p>
             <br>
+            <p>{{ form.cidade.errors }}</p>
             <p>Cidade: {{ form.cidade }}</p>
             <br>
+            <p>{{ form.codigo_postal.errors }}</p>
             <p>Código postal: {{ form.codigo_postal }}</p>
             <br>
             <p>Foto: {{ form.foto }}</p>

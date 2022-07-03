@@ -403,7 +403,7 @@ class ZonaModelForm(forms.ModelForm):
     numero_da_zona = forms.IntegerField(
         required=True,
         initial=1,
-        widget=forms.NumberInput(attrs={'class': 'field1'}),
+        widget=forms.TextInput(attrs={'class': 'field1'}),
         min_value=1,
         )
     lugares = forms.IntegerField(
@@ -425,7 +425,6 @@ class ZonaModelForm(forms.ModelForm):
             'lugares',
             'tipo_de_zona'
         ]
-            
 
 
 

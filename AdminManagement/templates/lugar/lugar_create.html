@@ -31,6 +31,10 @@
                 color: #757575;
                 background-color: white;
             }
+            ul {
+                color: red;
+                margin-left: 3.75%;
+            }
         </style>
     </head>
     
@@ -43,6 +47,7 @@
         <br>
         
         <form action='.' method='POST' enctype="multipart/form-data">{% csrf_token %}
+            <p>{{ form.numero_do_lugar.errors }}</p>
             <p>Número do lugar: {{ form.numero_do_lugar }}</p>
             <br>
             <input class="btn btn-sm btn-primary" style="margin-left: 5%" type='submit' value='Criar' />
